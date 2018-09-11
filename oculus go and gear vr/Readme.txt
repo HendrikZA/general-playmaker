@@ -17,8 +17,9 @@ The only thing you need to use them is:
 
 1. Playmaker (of course!)
 2. Download and import the Oculus Unity Utilities package available here: https://developer.oculus.com/downloads/package/oculus-utilities-for-unity-5/ into your Unity project.
-3. Add the OVRManager.cs script into any empty GameObject in your scene (you need OVRManager in your scene to use these actions)
-4. You're all set. Just add the actions to an FSM and use as you want.
+3. Add the OVRManager.cs script into any empty GameObject in your scene (you need OVRManager in your scene to use these actions).
+4. Download my actions and add them to your project's assets folder, or a sub-folder in your assets folder.
+5. You're all set. Just add the actions to an FSM and use as you want.
 
 Contact:
 -------
