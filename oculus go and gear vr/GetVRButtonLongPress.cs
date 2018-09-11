@@ -8,7 +8,7 @@ namespace HutongGames.PlayMaker.Actions
 {
     
     // Remember to add OVRManager script anywhere in the scene before OVRInput will work.
-    [ActionCategory(ActionCategory.Input)]
+    [ActionCategory(ActionCategory.Custom)]
     [Tooltip("Checks if the trigger or dpad buttons are being held down. You can use this in two states to check the duration of the button press. One state to check when button is pressed, and another to check when it has been released.")]
 
 
