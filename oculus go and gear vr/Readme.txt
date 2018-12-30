@@ -7,7 +7,7 @@ I've just started writing Playmaker actions for the first time so hope to improv
 
 I'll add more custom actions for Oculus Go and Gear VR and also for general things in near future.
 
-Please reach me on the Playmaker forums (HendrikB) if you have any suggestions or help with these actions.
+Please reach me on the Playmaker forums (Ew0k) if you have any suggestions or help with these actions.
 
 Usage:
 ------
