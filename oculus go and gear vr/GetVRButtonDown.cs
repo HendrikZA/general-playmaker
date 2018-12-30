@@ -32,7 +32,7 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("Event to send if Back button was pressed.")]
         public FsmEvent backButton;
 
-        // DPAD button pressed in centre. Can't be used with other directional presses.
+        // Touchpad button pressed in centre. Can't be used with other directional presses.
         [ActionSection("Touchpad Button")]
         [Tooltip("Event to send if Touchpad button was pressed.")]
         public FsmEvent touchpadButtonPressed;
@@ -41,7 +41,7 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("Event to send if Touchpad button is being held down. This can be used to check for long press.")]
         public FsmEvent touchpadButtonHeldDown;
 
-        // DPAD Swipes
+        // Touchpad Swipes
         [ActionSection("Touchpad Swipes")]
         [Tooltip("Event to send if Touchpad was swiped up.")]
         public FsmEvent touchpadSwipeUp;
@@ -54,6 +54,12 @@ namespace HutongGames.PlayMaker.Actions
 
         [Tooltip("Event to send if Touchpad was swiped right.")]
         public FsmEvent touchpadSwipeRight;
+
+        // Touchpad axis
+        [ActionSection("Touchpad Axis")]
+        [Tooltip("Checks finger position on the touchpad. Can be used for FPS movement and all kinds of useful things.")]
+        [UIHint(UIHint.Variable)]
+        public FsmVector2 touchpadAxis;
 
 
         // Resets all values to defaults
@@ -124,7 +130,11 @@ namespace HutongGames.PlayMaker.Actions
             if (OVRInput.GetDown(OVRInput.Button.DpadRight))
             {
                 Fsm.Event(touchpadSwipeRight);
-            }          
+            }
+
+            // Touchpad axis
+            touchpadAxis.Value = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+
         }
 
         public override string ErrorCheck()
