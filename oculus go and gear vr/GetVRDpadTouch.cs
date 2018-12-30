@@ -8,7 +8,7 @@ namespace HutongGames.PlayMaker.Actions
 {
     
     // Remember to add OVRManager script anywhere in the scene before OVRInput will work.
-    [ActionCategory(ActionCategory.Custom)]
+    [ActionCategory(ActionCategory.Input)]
     [Tooltip("Checks if the touchpad is touched but not pressed down.")]
 
 
