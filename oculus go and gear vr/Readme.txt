@@ -12,7 +12,7 @@ Please reach me on the Playmaker forums (Ew0k) if you have any suggestions or he
 Usage:
 ------
 
-The custom actions will show in the "Custom" category in your Playmaker actions list.
+The custom actions will show in the "Input" category in your Playmaker actions list.
 The only thing you need to use them is:
 
 1. Playmaker (of course!)
