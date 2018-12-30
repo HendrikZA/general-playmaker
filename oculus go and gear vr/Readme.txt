@@ -19,7 +19,7 @@ The only thing you need to use them is:
 2. Download and import the Oculus Unity Utilities package available here: https://developer.oculus.com/downloads/package/oculus-utilities-for-unity-5/ into your Unity project.
 3. Add the OVRManager.cs script into any empty GameObject in your scene (you need OVRManager in your scene to use these actions).
 4. Download my actions and add them to your project's assets folder, or a sub-folder in your assets folder.
- 4.1. If you're new to Github, the best way to get the actual code for the script is to click on the script name on the Github page, then when the page loads, click on the RAW button to get the code. Copy all the code on that page. Make a new C# script in Unity, name it to the exact same name of the script on my Github, e.g. GetVRButtonDown.cs, and then paste the code into it, and Save.
+ 4.1. If you're new to Github, the best way to get the actual code for the script is to click on the script name on the Github page, then when the page loads, click on the RAW button to get the code. Right-click anywhere on that page, and select Save-As, and save it to your computer.
 5. You're all set. Just add the actions to an FSM and use as you want.
 
 Contact:
