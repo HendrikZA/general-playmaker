@@ -5,7 +5,7 @@ Thanks for checking out my custom action for Oculus Go and Gear VR :)
 
 This action is versatile and can allow many possibilities of control for your projects. I will be adding more features soon, please keep checking the forum post for updates.
 
-Please reach me on the Playmaker forums (HendrikB) if you have any suggestions or help with these actions.
+Please reach me on the Playmaker forums (HendrikB) if you have any suggestions or need help with these actions.
 
 Usage:
 ------
