@@ -61,6 +61,27 @@ namespace HutongGames.PlayMaker.Actions
         [UIHint(UIHint.Variable)]
         public FsmVector2 touchpadAxis;
 
+        // Touchpad Pressed Direction
+        [ActionSection("Touchpad Pressed Direction")]
+        [Tooltip("Checks if Touchpad is pressed in the upward direction.")]
+        public FsmEvent touchpadPressedUp;
+        [Tooltip("Touchpad upward press sensitivity. How far should the button be pressed to the top of the touchpad before it triggers as being pressed upward? Defaults to 0.5, which means about 50% upwards from centre. This feels just right, but you can set it less or more depending on your needs.")]
+        public FsmFloat upSensitivity = 0.5f;
+
+        [Tooltip("Checks if Touchpad is pressed in the downward direction.")]
+        public FsmEvent touchpadPressedDown;
+        [Tooltip("Touchpad downward press sensitivity. How far should the button be pressed to the bottom of the touchpad before it triggers as being pressed downward? Defaults to 0.5, which means about 50% downwards from centre. This feels just right, but you can set it less or more depending on your needs.")]
+        public FsmFloat downSensitivity = -0.5f;
+
+        [Tooltip("Checks if Touchpad is pressed in the left direction.")]
+        public FsmEvent touchpadPressedLeft;
+        [Tooltip("Touchpad left press sensitivity. How far should the button be pressed to the left of the touchpad before it triggers as being pressed left? Defaults to 0.5, which means about 50% left from centre. This feels just right, but you can set it less or more depending on your needs.")]
+        public FsmFloat leftSensitivity = -0.5f;
+
+        [Tooltip("Checks if Touchpad is pressed in the right direction.")]
+        public FsmEvent touchpadPressedRight;
+        [Tooltip("Touchpad right press sensitivity. How far should the button be pressed to the right of the touchpad before it triggers as being pressed right? Defaults to 0.5, which means about 50% right from centre. This feels just right, but you can set it less or more depending on your needs.")]
+        public FsmFloat rightSensitivity = 0.5f;
 
         // Resets all values to defaults
         public override void Reset()
@@ -135,6 +156,24 @@ namespace HutongGames.PlayMaker.Actions
             // Touchpad axis
             touchpadAxis.Value = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
 
+            // Touchpad pressed in a specific direction
+            if ((touchpadAxis.Value.x > rightSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
+            {
+                Fsm.Event(touchpadPressedRight);
+            }
+            if ((touchpadAxis.Value.x < leftSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
+            {
+                Fsm.Event(touchpadPressedLeft);
+            }
+            if ((touchpadAxis.Value.y > upSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
+            {
+                Fsm.Event(touchpadPressedUp);
+            }
+            if ((touchpadAxis.Value.y < downSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
+            {
+                Fsm.Event(touchpadPressedDown);
+            }
+
         }
 
         public override string ErrorCheck()
@@ -146,6 +185,10 @@ namespace HutongGames.PlayMaker.Actions
                 FsmEvent.IsNullOrEmpty(touchpadButtonPressed) &&
                 FsmEvent.IsNullOrEmpty(touchpadButtonReleased) &&
                 FsmEvent.IsNullOrEmpty(touchpadButtonHeldDown) &&
+                FsmEvent.IsNullOrEmpty(touchpadPressedUp) &&
+                FsmEvent.IsNullOrEmpty(touchpadPressedDown) &&
+                FsmEvent.IsNullOrEmpty(touchpadPressedLeft) &&
+                FsmEvent.IsNullOrEmpty(touchpadPressedRight) &&
                 FsmEvent.IsNullOrEmpty(touchpadSwipeUp) &&
                 FsmEvent.IsNullOrEmpty(touchpadSwipeDown) &&
                 FsmEvent.IsNullOrEmpty(touchpadSwipeLeft) &&
