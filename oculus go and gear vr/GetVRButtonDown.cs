@@ -25,7 +25,7 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("Event to send if Trigger button was released.")]
         public FsmEvent triggerButtonReleased;
         [Tooltip("Event to send if Trigger button is being held down. This can be used to check for long press.")]
-        public FsmEvent triggerButtonHeldDown;
+        public FsmEvent triggerButtonHeld;
 
         // Back button pressed
         [ActionSection("Back Button")]
@@ -39,7 +39,7 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("Event to send if Touchpad button was released.")]
         public FsmEvent touchpadButtonReleased;
         [Tooltip("Event to send if Touchpad button is being held down. This can be used to check for long press.")]
-        public FsmEvent touchpadButtonHeldDown;
+        public FsmEvent touchpadButtonHeld;
 
         // Touchpad Swipes
         [ActionSection("Touchpad Swipes")]
@@ -88,11 +88,11 @@ namespace HutongGames.PlayMaker.Actions
         {
             triggerButtonPressed = null;
             triggerButtonReleased = null;
-            triggerButtonHeldDown = null;
+            triggerButtonHeld = null;
             backButton = null;
             touchpadButtonPressed = null;
             touchpadButtonReleased = null;
-            touchpadButtonHeldDown = null;
+            touchpadButtonHeld = null;
             touchpadSwipeUp = null;
             touchpadSwipeDown = null;
             touchpadSwipeLeft = null;
@@ -112,7 +112,7 @@ namespace HutongGames.PlayMaker.Actions
             }
             if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
             {
-                Fsm.Event(triggerButtonHeldDown);
+                Fsm.Event(triggerButtonHeld);
             }
 
             // Back button pressed
@@ -132,7 +132,7 @@ namespace HutongGames.PlayMaker.Actions
             }
             if (OVRInput.Get(OVRInput.Button.One))
             {
-                Fsm.Event(touchpadButtonHeldDown);
+                Fsm.Event(touchpadButtonHeld);
             }
 
             // Touchpad Swipes
@@ -180,11 +180,11 @@ namespace HutongGames.PlayMaker.Actions
         {
             if (FsmEvent.IsNullOrEmpty(triggerButtonPressed) &&
                 FsmEvent.IsNullOrEmpty(triggerButtonReleased) &&
-                FsmEvent.IsNullOrEmpty(triggerButtonHeldDown) &&
+                FsmEvent.IsNullOrEmpty(triggerButtonHeld) &&
                 FsmEvent.IsNullOrEmpty(backButton) &&
                 FsmEvent.IsNullOrEmpty(touchpadButtonPressed) &&
                 FsmEvent.IsNullOrEmpty(touchpadButtonReleased) &&
-                FsmEvent.IsNullOrEmpty(touchpadButtonHeldDown) &&
+                FsmEvent.IsNullOrEmpty(touchpadButtonHeld) &&
                 FsmEvent.IsNullOrEmpty(touchpadPressedUp) &&
                 FsmEvent.IsNullOrEmpty(touchpadPressedDown) &&
                 FsmEvent.IsNullOrEmpty(touchpadPressedLeft) &&
