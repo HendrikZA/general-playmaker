@@ -51,7 +51,7 @@ namespace HutongGames.PlayMaker.Actions
             // Send event if user is not present, and thus if headset is removed.
             if (!OVRManager.isUserPresent)
             {
-                Fsm.Event(headsetRemoved)
+                Fsm.Event(headsetRemoved);
             }
         }
     }
