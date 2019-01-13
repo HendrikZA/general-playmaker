@@ -34,25 +34,25 @@ namespace HutongGames.PlayMaker.Actions
         {
             headsetRemoved = null;
             headsetOnFace = null;
-            isUserPresent = false;
+            isUserPresent = true;
         }
 
-        public override void OnUpdate()
+        public override void OnEnter()
         {
-            // Check of user is present and store in bool
-            isUserPresent.Value = OVRManager.isUserPresent;
+            OVRManager.HMDMounted += HandleHMDMounted;
+            OVRManager.HMDUnmounted += HandleHMDUnmounted;
+        }
 
-            // Send event if user is present, and thus if headset is on face.
-            if (OVRManager.isUserPresent)
-            {
-                Fsm.Event(headsetOnFace);
-            }
+        void HandleHMDMounted()
+        {
+            Fsm.Event(headsetOnFace);
+            isUserPresent.Value = true;
+        }
 
-            // Send event if user is not present, and thus if headset is removed.
-            if (!OVRManager.isUserPresent)
-            {
-                Fsm.Event(headsetRemoved);
-            }
+        void HandleHMDUnmounted()
+        {
+            Fsm.Event(headsetRemoved);
+            isUserPresent.Value = false;
         }
     }
 }
