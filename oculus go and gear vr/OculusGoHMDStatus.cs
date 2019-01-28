@@ -16,7 +16,6 @@ namespace HutongGames.PlayMaker.Actions
 
     public class OculusGoHMDStatus : FsmStateAction
     {
-
         // Events to send if HMD is on face or not.
         [ActionSection("Headset Status")]
         [Tooltip("Sends an event if the headset has been removed.")]
