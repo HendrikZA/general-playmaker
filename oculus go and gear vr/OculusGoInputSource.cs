@@ -14,7 +14,7 @@ namespace HutongGames.PlayMaker.Actions
     [Tooltip("Checks if the controller is connected, and if so, whether it is configured for the left hand or right hand. Checks if only HMD is connected, in which case, we can assume player is using Gear VR without a controller.")]
 
 
-    public class OculusVRInputSource : FsmStateAction
+    public class OculusGoInputSource : FsmStateAction
     {
         [Tooltip("Input source is from a controller that is on the left hand side. You can use just this event, or if you prefer, you can store the bool value below as a variable to use as needed.")]
         public FsmEvent leftControllerConnected;
