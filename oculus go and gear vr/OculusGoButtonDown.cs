@@ -8,7 +8,6 @@ using UnityEngine;
 
 namespace HutongGames.PlayMaker.Actions
 {
-
     // Remember to add OVRManager script anywhere in the scene before OVRInput will work.
     [ActionCategory(ActionCategory.Input)]
     [Tooltip("Checks if the Oculus Go, or Gear VR, controller buttons have been pressed or swiped. Add the OVRManager.cs script to any Gameobject in the scene. It can be found in the Oculus Utilities package.")]
