@@ -8,7 +8,6 @@ using UnityEngine;
 
 namespace HutongGames.PlayMaker.Actions
 {
-
     // Remember to add OVRManager script anywhere in the scene before OVRInput will work.
     [ActionCategory(ActionCategory.Input)]
     [Tooltip("Gets the rotation, velocity, acceleration and position of the active controller.")]
