@@ -14,7 +14,7 @@ namespace HutongGames.PlayMaker.Actions
     [Tooltip("Checks if the Oculus Go, or Gear VR, controller buttons have been pressed or swiped. Add the OVRManager.cs script to any Gameobject in the scene. It can be found in the Oculus Utilities package.")]
 
 
-    public class GetVRButtonDown : FsmStateAction
+    public class OculusGoButtonDown : FsmStateAction
     {
         // Events to send
         // Trigger button pressed
