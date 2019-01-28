@@ -14,7 +14,7 @@ namespace HutongGames.PlayMaker.Actions
     [Tooltip("Gets the rotation, velocity, acceleration and position of the active controller.")]
 
 
-    public class GetVRPhysics : FsmStateAction
+    public class OculusGoPhysics : FsmStateAction
     {
 
         // Different types of controller physics we are monitoring.
