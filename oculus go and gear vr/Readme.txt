@@ -19,7 +19,7 @@ These steps below will work for installing / using any of my Playmaker Oculus Go
 4. Download my action and add it to your project's assets folder, or a sub-folder in your assets folder, anywhere you want.
  4.1. If you're new to Github, the best way to get the actual code for the script is to click on the script name on the Github page, then when the page loads, click on the RAW button to get the actual code pre-formatted on the page. Right-click anywhere on that page, and select "Save as", and save the script to your computer. Then simply drag it into your Unity project.
  4.2. Alternatively you can download all my actions in a Zip file by going to the root of my Github repo (https://github.com/HendrikZA/general-playmaker), and then just click on the "Clone or download" button, and select to download ZIP. Then just drag them into your project.
-5. You're all set. You can find the action GetVRButtonDown in the Input category in the Action Browser. Just add the action to an FSM and use as you want.
+5. You're all set. You can find the newly added action/s in your Input category in the Action Browser. Just add the action to an FSM and use as you want.
 
 Quick Note on "OculusGoButtonDown.cs":
 -------------------------------------
