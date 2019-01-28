@@ -8,7 +8,6 @@ using UnityEngine;
 
 namespace HutongGames.PlayMaker.Actions
 {
-
     // Remember to add OVRManager script anywhere in the scene before OVRInput will work.
     [ActionCategory(ActionCategory.Input)]
     [Tooltip("Checks if the controller is connected, and if so, whether it is configured for the left hand or right hand. Checks if only HMD is connected, in which case, we can assume player is using Gear VR without a controller.")]
