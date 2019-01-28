@@ -18,7 +18,7 @@ namespace HutongGames.PlayMaker.Actions
     {
         // Dpad axis - hidden as it is used only in the background for this action.
         [HideInInspector]
-        public FsmVector2 DpadAxis;
+        public FsmVector2 dpadAxis;
 
         // Dpad 4-way Pressed Direction
         [ActionSection("Dpad Pressed Direction")]
@@ -99,42 +99,45 @@ namespace HutongGames.PlayMaker.Actions
 
         public override void OnUpdate()
         {
+            // Touchpad axis
+            dpadAxis.Value = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+
             // Dpad pressed in a diagonal direction
             // Upper-right
-            if ((DpadAxis.Value.x >= upperRightSensitivityX.Value) && (DpadAxis.Value.y >= upperRightSensitivityY.Value) && (OVRInput.GetDown(OVRInput.Button.One)))
+            if ((dpadAxis.Value.x >= upperRightSensitivityX.Value) && (dpadAxis.Value.y >= upperRightSensitivityY.Value) && (OVRInput.GetDown(OVRInput.Button.One)))
             {
                 Fsm.Event(dpadPressedUpperRight);
             }
             // Lower-right
-            if ((DpadAxis.Value.x >= lowerRightSensitivityX.Value) && (DpadAxis.Value.y <= lowerRightSensitivityY.Value) && (OVRInput.GetDown(OVRInput.Button.One)))
+            if ((dpadAxis.Value.x >= lowerRightSensitivityX.Value) && (dpadAxis.Value.y <= lowerRightSensitivityY.Value) && (OVRInput.GetDown(OVRInput.Button.One)))
             {
                 Fsm.Event(dpadPressedLowerRight);
             }
             // Lower-left
-            if ((DpadAxis.Value.x <= lowerLeftSensitivityX.Value) && (DpadAxis.Value.y <= lowerLeftSensitivityY.Value) && (OVRInput.GetDown(OVRInput.Button.One)))
+            if ((dpadAxis.Value.x <= lowerLeftSensitivityX.Value) && (dpadAxis.Value.y <= lowerLeftSensitivityY.Value) && (OVRInput.GetDown(OVRInput.Button.One)))
             {
                 Fsm.Event(dpadPressedLowerLeft);
             }
             // Upper-left
-            if ((DpadAxis.Value.x <= upperLeftSensitivityX.Value) && (DpadAxis.Value.y >= upperLeftSensitivityY.Value) && (OVRInput.GetDown(OVRInput.Button.One)))
+            if ((dpadAxis.Value.x <= upperLeftSensitivityX.Value) && (dpadAxis.Value.y >= upperLeftSensitivityY.Value) && (OVRInput.GetDown(OVRInput.Button.One)))
             {
                 Fsm.Event(dpadPressedUpperLeft);
             }
 
             // Dpad pressed in a specific direction
-            if ((DpadAxis.Value.x > rightSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
+            if ((dpadAxis.Value.x > rightSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
             {
                 Fsm.Event(dpadPressedRight);
             }
-            if ((DpadAxis.Value.x < leftSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
+            if ((dpadAxis.Value.x < leftSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
             {
                 Fsm.Event(dpadPressedLeft);
             }
-            if ((DpadAxis.Value.y > upSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
+            if ((dpadAxis.Value.y > upSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
             {
                 Fsm.Event(dpadPressedUp);
             }
-            if ((DpadAxis.Value.y < downSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
+            if ((dpadAxis.Value.y < downSensitivity.Value) && OVRInput.GetDown(OVRInput.Button.One))
             {
                 Fsm.Event(dpadPressedDown);
             }
