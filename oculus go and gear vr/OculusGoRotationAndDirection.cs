@@ -14,7 +14,7 @@ namespace HutongGames.PlayMaker.Actions
     [Tooltip("Sends events based on rotation to left or right, or pointing up and down.")]
 
 
-    public class GetVREvents : FsmStateAction
+    public class OculusGoRotation : FsmStateAction
     {
 
         // Different types of controller physics we are monitoring.
