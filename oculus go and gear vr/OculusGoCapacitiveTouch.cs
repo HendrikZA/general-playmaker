@@ -65,19 +65,19 @@ namespace HutongGames.PlayMaker.Actions
             touchpadAxis.Value = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
 
             // Capacitive surface touched in a specific direction
-            if (touchpadAxis.Value.x > rightSensitivity.Value)
+            if (touchpadAxis.Value.x > capacitiveRightSensitivity.Value)
             {
                 Fsm.Event(capacitiveTouchedRight);
             }
-            if (touchpadAxis.Value.x < leftSensitivity.Value)
+            if (touchpadAxis.Value.x < capacitiveLeftSensitivity.Value)
             {
                 Fsm.Event(capacitiveTouchedLeft);
             }
-            if (touchpadAxis.Value.y > upSensitivity.Value)
+            if (touchpadAxis.Value.y > capacitiveUpSensitivity.Value)
             {
                 Fsm.Event(capacitiveTouchedUp);
             }
-            if (touchpadAxis.Value.y < downSensitivity.Value)
+            if (touchpadAxis.Value.y < capacitiveDownSensitivity.Value)
             {
                 Fsm.Event(capacitiveTouchedDown);
             }
